@@ -1,0 +1,58 @@
+project: diting.mimic.trace.hdf5-slide_window
+method: bayes
+metric:
+  name: validation/e_delta_angle
+  goal: minimize
+parameters:
+  lr:
+    min: 0.0001
+    max: 0.001
+  batch_size:
+    values: [64]
+command:
+  - accelerate-launch 
+  - --config_file 
+  - config/accelerate/bf16_cards4_ds1.yaml 
+  - train_single_station_via_llm_way.py 
+  - --task 
+  - train 
+  - --model 
+  - PearlfishW10M 
+  - --epochs 
+  - 20
+  - --downstream_task 
+  - cos_line_vector
+  - --max_length 
+  - 1500 
+  - --num_workers 
+  - 8 
+  - --data_parallel_dispatch 
+  - --resource_source 
+  - diting.mimic.trace.hdf5 
+  - --Resource 
+  - DiTing 
+  - --return_trend
+  - --warmup_epochs
+  - 3
+  - --use_wandb
+  - --bandfilter_rate
+  - multiewn8 
+  - --wave_channel 
+  - 24
+  - --save_every_epoch
+  - 10
+  - --clean_checkpoints_at_end
+  - --save_on_epoch_end
+  - False
+  - --train_sampling_strategy.strategy_name
+  - early_warning_before_p
+  - --valid_sampling_strategy.strategy_name
+  - early_warning_before_p
+  - --train_sampling_strategy.early_warning
+  - 500
+  - --valid_sampling_strategy.early_warning
+  - 500 
+  - --do_validation_at_first_epoch
+  - --loader_all_data_in_memory_once
+  - --use_resource_buffer
+  - ${args}

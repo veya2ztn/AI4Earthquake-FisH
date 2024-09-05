@@ -1,0 +1,76 @@
+project: ditinggroup.small.trace.hdf5-slide_window
+method: bayes
+metric:
+  name: validation/loss
+  goal: minimize
+parameters:
+  lr:
+    min: 0.00001
+    max: 0.0001
+  use_whole_layer_output:
+    values: [False]
+  model:
+    values: [MultiFishW10M_V3, MultiFishW10M_V4, MultiFishW10M_V5]
+  cross_num_hidden_layers:
+    values: [1]
+  cross_hidden_size:
+    values: [128, 256, 512]
+  optim:
+    values: [adamw, lion, sophia]
+command:
+  - accelerate-launch 
+  - --main_process_port
+  - 12411
+  - --config_file 
+  - config/accelerate/bf16_cards8.yaml 
+  - train_single_station_via_llm_way.py 
+  - --task
+  - train
+  - --epochs
+  - 20
+  - --downstream_task
+  - mse_group_vector
+  - --max_length
+  - 3000
+  - --num_workers
+  - 32
+  - --data_parallel_dispatch
+  - --resource_source
+  - ditinggroup.small.trace.hdf5
+  - --Resource
+  - DiTingGroup
+  - --warmup_epochs
+  - 10
+  - --use_wandb
+  - --bandfilter_rate
+  - 0.5
+  - --return_trend
+  - False
+  - --save_every_epoch
+  - 10
+  - --train_sampling_strategy.strategy_name
+  - unalignment.fix_sample_ahead_p
+  - --train_sampling_strategy.early_warning
+  - 500
+  - --valid_sampling_strategy.strategy_name
+  - unalignment.fix_sample_ahead_p
+  - --valid_sampling_strategy.early_warning
+  - 500
+  - --optim=adamw
+  - --seed=20130901
+  - --weight_decay=0.01
+  - --batch_size
+  - 8
+  - --Dataset
+  - GroupDataset
+  - --freeze_backbone
+  - only_groupbranch
+  - --preload_weight
+  - checkpoints/diting.mimic.trace.hdf5/Goldfish.10M.Slide/12_14_20_19-seed_20130901/pytorch_model.bin
+  - --load_weight_partial
+  - --use_flashattn_in_group_attention
+  - False
+  - --use_wandb
+  - --save_on_epoch_end
+  - False
+  - ${args}

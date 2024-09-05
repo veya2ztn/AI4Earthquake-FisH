@@ -1,0 +1,51 @@
+project: diting.tiny.trace.hdf5-recurrent
+method: bayes
+metric:
+  name: validation/p-peak.p/precision.at0.5
+  goal: minimize
+parameters:
+  lr:
+    min: 0.00001
+    max: 0.001
+  batch_size:
+    values: [32]
+  seed:
+    values: [21]
+  optim:
+    values: [adamw]
+  peak_relaxtion:
+    values: [10, 20, 30]
+command:
+  - accelerate-launch 
+  - --config_file 
+  - config/accelerate/bf16_cards8_ds1.yaml 
+  - train_single_station_via_llm_way.py 
+  - --task 
+  - train 
+  - --model 
+  - PearlfishS10M 
+  - --epochs 
+  - 50 
+  - --downstream_task 
+  - p_peakprob_bce
+  - --max_length 
+  - 3000 
+  - --num_workers 
+  - 8 
+  - --data_parallel_dispatch 
+  - --resource_source 
+  - diting.tiny.trace.hdf5 
+  - --Resource 
+  - DiTing 
+  - --return_trend
+  - --normlize_at_downstream
+  - --warmup_epochs
+  - 3
+  - --use_wandb
+  - --bandfilter_rate
+  - multiewn8 
+  - --wave_channel 
+  - 24
+  - --save_every_epoch
+  - 10
+  - ${args}

@@ -1,0 +1,33 @@
+program: train_single_station_via_llm_way.py
+project: magtime.stead.trace
+method: bayes
+metric:
+  name: validation/loss
+  goal: minimize
+parameters:
+  lr:
+    min: 0.001
+    max: 0.01
+  seed:
+    values: [19940928, 19950929, 20130901, 20230901]
+command:
+  - accelerate-launch
+  - --main_process_port
+  - 12345
+  - --config_file
+  - DataParal.yaml
+  - ${program}
+  - --batch_size 
+  - 16
+  - --use_wandb
+  - --distance_unit 
+  - 1
+  - --model_type
+  - rwkv_magloc
+  - --epochs
+  - 30
+  - --warning_window
+  - 200
+  - --downstream_task
+  - abs_xy
+  - ${args}

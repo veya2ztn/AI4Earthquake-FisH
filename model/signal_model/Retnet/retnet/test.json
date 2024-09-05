@@ -1,0 +1,558 @@
+{
+  "RetNetPred_MSF_Phase.backbone": {
+    "forward_cost": 11.918357,
+    "backward_cost": 0.007925999999999999,
+    "deepth": 1,
+    "collect_flag": "none",
+    "children": {
+      "RetNetPred_MSF_Phase.backbone.dropout_module": {
+        "deepth": 2,
+        "collect_flag": "none"
+      },
+      "RetNetPred_MSF_Phase.backbone.layers": {
+        "deepth": 2,
+        "collect_flag": "list",
+        "children": {
+          "RetNetPred_MSF_Phase.backbone.layers.0": {
+            "forward_cost": 2.991596,
+            "backward_cost": 2.856502,
+            "deepth": 3,
+            "collect_flag": "none",
+            "children": {
+              "RetNetPred_MSF_Phase.backbone.layers.0.dropout_module": {
+                "forward_cost": 0.037897,
+                "backward_cost": 0.016838,
+                "deepth": 4,
+                "collect_flag": "none"
+              },
+              "RetNetPred_MSF_Phase.backbone.layers.0.retention": {
+                "forward_cost": 1.787491,
+                "backward_cost": 1.73063,
+                "deepth": 4,
+                "collect_flag": "none",
+                "children": {
+                  "RetNetPred_MSF_Phase.backbone.layers.0.retention.q_proj": {
+                    "forward_cost": 0.10542,
+                    "backward_cost": 0.088849,
+                    "deepth": 5,
+                    "collect_flag": "none"
+                  },
+                  "RetNetPred_MSF_Phase.backbone.layers.0.retention.k_proj": {
+                    "forward_cost": 0.075708,
+                    "backward_cost": 0.079765,
+                    "deepth": 5,
+                    "collect_flag": "none"
+                  },
+                  "RetNetPred_MSF_Phase.backbone.layers.0.retention.v_proj": {
+                    "forward_cost": 0.068377,
+                    "backward_cost": 0.082842,
+                    "deepth": 5,
+                    "collect_flag": "none"
+                  },
+                  "RetNetPred_MSF_Phase.backbone.layers.0.retention.g_proj": {
+                    "forward_cost": 0.084658,
+                    "backward_cost": 0.122127,
+                    "deepth": 5,
+                    "collect_flag": "none"
+                  },
+                  "RetNetPred_MSF_Phase.backbone.layers.0.retention.out_proj": {
+                    "forward_cost": 0.08201499999999999,
+                    "backward_cost": 0.106818,
+                    "deepth": 5,
+                    "collect_flag": "none"
+                  },
+                  "RetNetPred_MSF_Phase.backbone.layers.0.retention.self_retention": {
+                    "forward_cost": 0.425496,
+                    "backward_cost": 0.27327399999999996,
+                    "deepth": 5,
+                    "collect_flag": "none"
+                  },
+                  "RetNetPred_MSF_Phase.backbone.layers.0.retention.group_norm": {
+                    "forward_cost": 0.150504,
+                    "backward_cost": 0.191135,
+                    "deepth": 5,
+                    "collect_flag": "none"
+                  },
+                  "RetNetPred_MSF_Phase.backbone.layers.0.retention.remaining_cost": {
+                    "forward_cost": 0.7953129999999999,
+                    "deepth": 5,
+                    "backward_cost": 0.78582
+                  }
+                }
+              },
+              "RetNetPred_MSF_Phase.backbone.layers.0.retention_layer_norm": {
+                "forward_cost": 0.169427,
+                "backward_cost": 0.219389,
+                "deepth": 4,
+                "collect_flag": "none"
+              },
+              "RetNetPred_MSF_Phase.backbone.layers.0.ffn": {
+                "forward_cost": 0.599903,
+                "backward_cost": 0.492799,
+                "deepth": 4,
+                "collect_flag": "none",
+                "children": {
+                  "RetNetPred_MSF_Phase.backbone.layers.0.ffn.activation_dropout_module": {
+                    "forward_cost": 0.039361,
+                    "backward_cost": 0.013739999999999999,
+                    "deepth": 5,
+                    "collect_flag": "none"
+                  },
+                  "RetNetPred_MSF_Phase.backbone.layers.0.ffn.dropout_module": {
+                    "forward_cost": 0.032352,
+                    "backward_cost": 0.012556,
+                    "deepth": 5,
+                    "collect_flag": "none"
+                  },
+                  "RetNetPred_MSF_Phase.backbone.layers.0.ffn.fc1": {
+                    "forward_cost": 0.10374399999999999,
+                    "backward_cost": 0.118188,
+                    "deepth": 5,
+                    "collect_flag": "none"
+                  },
+                  "RetNetPred_MSF_Phase.backbone.layers.0.ffn.fc2": {
+                    "forward_cost": 0.089477,
+                    "backward_cost": 0.147306,
+                    "deepth": 5,
+                    "collect_flag": "none"
+                  },
+                  "RetNetPred_MSF_Phase.backbone.layers.0.ffn.ffn_layernorm": {
+                    "forward_cost": 0.063108,
+                    "backward_cost": 0.065515,
+                    "deepth": 5,
+                    "collect_flag": "none"
+                  },
+                  "RetNetPred_MSF_Phase.backbone.layers.0.ffn.remaining_cost": {
+                    "forward_cost": 0.27186099999999996,
+                    "deepth": 5,
+                    "backward_cost": 0.135494
+                  }
+                }
+              },
+              "RetNetPred_MSF_Phase.backbone.layers.0.final_layer_norm": {
+                "forward_cost": 0.113387,
+                "backward_cost": 0.215491,
+                "deepth": 4,
+                "collect_flag": "none"
+              },
+              "RetNetPred_MSF_Phase.backbone.layers.0.remaining_cost": {
+                "forward_cost": 0.28349100000000016,
+                "deepth": 4,
+                "backward_cost": 0.18135499999999993
+              }
+            }
+          },
+          "RetNetPred_MSF_Phase.backbone.layers.1": {
+            "forward_cost": 2.924654,
+            "backward_cost": 2.858276,
+            "deepth": 3,
+            "collect_flag": "none",
+            "children": {
+              "RetNetPred_MSF_Phase.backbone.layers.1.dropout_module": {
+                "forward_cost": 0.029685,
+                "backward_cost": 0.016641,
+                "deepth": 4,
+                "collect_flag": "none"
+              },
+              "RetNetPred_MSF_Phase.backbone.layers.1.retention": {
+                "forward_cost": 1.6656499999999999,
+                "backward_cost": 1.7516539999999998,
+                "deepth": 4,
+                "collect_flag": "none",
+                "children": {
+                  "RetNetPred_MSF_Phase.backbone.layers.1.retention.q_proj": {
+                    "forward_cost": 0.091153,
+                    "backward_cost": 0.08998199999999999,
+                    "deepth": 5,
+                    "collect_flag": "none"
+                  },
+                  "RetNetPred_MSF_Phase.backbone.layers.1.retention.k_proj": {
+                    "forward_cost": 0.07815,
+                    "backward_cost": 0.089054,
+                    "deepth": 5,
+                    "collect_flag": "none"
+                  },
+                  "RetNetPred_MSF_Phase.backbone.layers.1.retention.v_proj": {
+                    "forward_cost": 0.067753,
+                    "backward_cost": 0.07803,
+                    "deepth": 5,
+                    "collect_flag": "none"
+                  },
+                  "RetNetPred_MSF_Phase.backbone.layers.1.retention.g_proj": {
+                    "forward_cost": 0.084577,
+                    "backward_cost": 0.10574,
+                    "deepth": 5,
+                    "collect_flag": "none"
+                  },
+                  "RetNetPred_MSF_Phase.backbone.layers.1.retention.out_proj": {
+                    "forward_cost": 0.081201,
+                    "backward_cost": 0.10396899999999999,
+                    "deepth": 5,
+                    "collect_flag": "none"
+                  },
+                  "RetNetPred_MSF_Phase.backbone.layers.1.retention.self_retention": {
+                    "forward_cost": 0.37307199999999996,
+                    "backward_cost": 0.278296,
+                    "deepth": 5,
+                    "collect_flag": "none"
+                  },
+                  "RetNetPred_MSF_Phase.backbone.layers.1.retention.group_norm": {
+                    "forward_cost": 0.124385,
+                    "backward_cost": 0.170148,
+                    "deepth": 5,
+                    "collect_flag": "none"
+                  },
+                  "RetNetPred_MSF_Phase.backbone.layers.1.retention.remaining_cost": {
+                    "forward_cost": 0.7653589999999999,
+                    "deepth": 5,
+                    "backward_cost": 0.8364349999999999
+                  }
+                }
+              },
+              "RetNetPred_MSF_Phase.backbone.layers.1.retention_layer_norm": {
+                "forward_cost": 0.125726,
+                "backward_cost": 0.230261,
+                "deepth": 4,
+                "collect_flag": "none"
+              },
+              "RetNetPred_MSF_Phase.backbone.layers.1.ffn": {
+                "forward_cost": 0.704456,
+                "backward_cost": 0.473887,
+                "deepth": 4,
+                "collect_flag": "none",
+                "children": {
+                  "RetNetPred_MSF_Phase.backbone.layers.1.ffn.activation_dropout_module": {
+                    "forward_cost": 0.167146,
+                    "backward_cost": 0.013472,
+                    "deepth": 5,
+                    "collect_flag": "none"
+                  },
+                  "RetNetPred_MSF_Phase.backbone.layers.1.ffn.dropout_module": {
+                    "forward_cost": 0.034173999999999996,
+                    "backward_cost": 0.012414999999999999,
+                    "deepth": 5,
+                    "collect_flag": "none"
+                  },
+                  "RetNetPred_MSF_Phase.backbone.layers.1.ffn.fc1": {
+                    "forward_cost": 0.077595,
+                    "backward_cost": 0.11934499999999999,
+                    "deepth": 5,
+                    "collect_flag": "none"
+                  },
+                  "RetNetPred_MSF_Phase.backbone.layers.1.ffn.fc2": {
+                    "forward_cost": 0.09285299999999999,
+                    "backward_cost": 0.130416,
+                    "deepth": 5,
+                    "collect_flag": "none"
+                  },
+                  "RetNetPred_MSF_Phase.backbone.layers.1.ffn.ffn_layernorm": {
+                    "forward_cost": 0.07653399999999999,
+                    "backward_cost": 0.06733299999999999,
+                    "deepth": 5,
+                    "collect_flag": "none"
+                  },
+                  "RetNetPred_MSF_Phase.backbone.layers.1.ffn.remaining_cost": {
+                    "forward_cost": 0.256154,
+                    "deepth": 5,
+                    "backward_cost": 0.13090600000000002
+                  }
+                }
+              },
+              "RetNetPred_MSF_Phase.backbone.layers.1.final_layer_norm": {
+                "forward_cost": 0.111734,
+                "backward_cost": 0.22330799999999998,
+                "deepth": 4,
+                "collect_flag": "none"
+              },
+              "RetNetPred_MSF_Phase.backbone.layers.1.remaining_cost": {
+                "forward_cost": 0.28740299999999985,
+                "deepth": 4,
+                "backward_cost": 0.16252500000000047
+              }
+            }
+          },
+          "RetNetPred_MSF_Phase.backbone.layers.2": {
+            "forward_cost": 2.756137,
+            "backward_cost": 2.9684269999999997,
+            "deepth": 3,
+            "collect_flag": "none",
+            "children": {
+              "RetNetPred_MSF_Phase.backbone.layers.2.dropout_module": {
+                "forward_cost": 0.030567999999999998,
+                "backward_cost": 0.016897,
+                "deepth": 4,
+                "collect_flag": "none"
+              },
+              "RetNetPred_MSF_Phase.backbone.layers.2.retention": {
+                "forward_cost": 1.657208,
+                "backward_cost": 1.844403,
+                "deepth": 4,
+                "collect_flag": "none",
+                "children": {
+                  "RetNetPred_MSF_Phase.backbone.layers.2.retention.q_proj": {
+                    "forward_cost": 0.094007,
+                    "backward_cost": 0.0902,
+                    "deepth": 5,
+                    "collect_flag": "none"
+                  },
+                  "RetNetPred_MSF_Phase.backbone.layers.2.retention.k_proj": {
+                    "forward_cost": 0.08903599999999999,
+                    "backward_cost": 0.090719,
+                    "deepth": 5,
+                    "collect_flag": "none"
+                  },
+                  "RetNetPred_MSF_Phase.backbone.layers.2.retention.v_proj": {
+                    "forward_cost": 0.066484,
+                    "backward_cost": 0.07846,
+                    "deepth": 5,
+                    "collect_flag": "none"
+                  },
+                  "RetNetPred_MSF_Phase.backbone.layers.2.retention.g_proj": {
+                    "forward_cost": 0.063875,
+                    "backward_cost": 0.108402,
+                    "deepth": 5,
+                    "collect_flag": "none"
+                  },
+                  "RetNetPred_MSF_Phase.backbone.layers.2.retention.out_proj": {
+                    "forward_cost": 0.09010599999999999,
+                    "backward_cost": 0.125801,
+                    "deepth": 5,
+                    "collect_flag": "none"
+                  },
+                  "RetNetPred_MSF_Phase.backbone.layers.2.retention.self_retention": {
+                    "forward_cost": 0.350732,
+                    "backward_cost": 0.349522,
+                    "deepth": 5,
+                    "collect_flag": "none"
+                  },
+                  "RetNetPred_MSF_Phase.backbone.layers.2.retention.group_norm": {
+                    "forward_cost": 0.129053,
+                    "backward_cost": 0.172222,
+                    "deepth": 5,
+                    "collect_flag": "none"
+                  },
+                  "RetNetPred_MSF_Phase.backbone.layers.2.retention.remaining_cost": {
+                    "forward_cost": 0.773915,
+                    "deepth": 5,
+                    "backward_cost": 0.8290770000000001
+                  }
+                }
+              },
+              "RetNetPred_MSF_Phase.backbone.layers.2.retention_layer_norm": {
+                "forward_cost": 0.123329,
+                "backward_cost": 0.226212,
+                "deepth": 4,
+                "collect_flag": "none"
+              },
+              "RetNetPred_MSF_Phase.backbone.layers.2.ffn": {
+                "forward_cost": 0.532729,
+                "backward_cost": 0.484512,
+                "deepth": 4,
+                "collect_flag": "none",
+                "children": {
+                  "RetNetPred_MSF_Phase.backbone.layers.2.ffn.activation_dropout_module": {
+                    "forward_cost": 0.039280999999999996,
+                    "backward_cost": 0.013231,
+                    "deepth": 5,
+                    "collect_flag": "none"
+                  },
+                  "RetNetPred_MSF_Phase.backbone.layers.2.ffn.dropout_module": {
+                    "forward_cost": 0.032015,
+                    "backward_cost": 0.012669999999999999,
+                    "deepth": 5,
+                    "collect_flag": "none"
+                  },
+                  "RetNetPred_MSF_Phase.backbone.layers.2.ffn.fc1": {
+                    "forward_cost": 0.075388,
+                    "backward_cost": 0.121878,
+                    "deepth": 5,
+                    "collect_flag": "none"
+                  },
+                  "RetNetPred_MSF_Phase.backbone.layers.2.ffn.fc2": {
+                    "forward_cost": 0.07327399999999999,
+                    "backward_cost": 0.132327,
+                    "deepth": 5,
+                    "collect_flag": "none"
+                  },
+                  "RetNetPred_MSF_Phase.backbone.layers.2.ffn.ffn_layernorm": {
+                    "forward_cost": 0.073434,
+                    "backward_cost": 0.068951,
+                    "deepth": 5,
+                    "collect_flag": "none"
+                  },
+                  "RetNetPred_MSF_Phase.backbone.layers.2.ffn.remaining_cost": {
+                    "forward_cost": 0.23933700000000002,
+                    "deepth": 5,
+                    "backward_cost": 0.13545500000000005
+                  }
+                }
+              },
+              "RetNetPred_MSF_Phase.backbone.layers.2.final_layer_norm": {
+                "forward_cost": 0.109736,
+                "backward_cost": 0.22830399999999998,
+                "deepth": 4,
+                "collect_flag": "none"
+              },
+              "RetNetPred_MSF_Phase.backbone.layers.2.remaining_cost": {
+                "forward_cost": 0.3025669999999998,
+                "deepth": 4,
+                "backward_cost": 0.16809899999999978
+              }
+            }
+          },
+          "RetNetPred_MSF_Phase.backbone.layers.3": {
+            "forward_cost": 2.822184,
+            "backward_cost": 3.4291319999999996,
+            "deepth": 3,
+            "collect_flag": "none",
+            "children": {
+              "RetNetPred_MSF_Phase.backbone.layers.3.dropout_module": {
+                "forward_cost": 0.044424,
+                "backward_cost": 0.016364,
+                "deepth": 4,
+                "collect_flag": "none"
+              },
+              "RetNetPred_MSF_Phase.backbone.layers.3.retention": {
+                "forward_cost": 1.6474579999999999,
+                "backward_cost": 2.272182,
+                "deepth": 4,
+                "collect_flag": "none",
+                "children": {
+                  "RetNetPred_MSF_Phase.backbone.layers.3.retention.q_proj": {
+                    "forward_cost": 0.08703,
+                    "backward_cost": 0.102264,
+                    "deepth": 5,
+                    "collect_flag": "none"
+                  },
+                  "RetNetPred_MSF_Phase.backbone.layers.3.retention.k_proj": {
+                    "forward_cost": 0.075787,
+                    "backward_cost": 0.08266699999999999,
+                    "deepth": 5,
+                    "collect_flag": "none"
+                  },
+                  "RetNetPred_MSF_Phase.backbone.layers.3.retention.v_proj": {
+                    "forward_cost": 0.08474999999999999,
+                    "backward_cost": 0.082337,
+                    "deepth": 5,
+                    "collect_flag": "none"
+                  },
+                  "RetNetPred_MSF_Phase.backbone.layers.3.retention.g_proj": {
+                    "forward_cost": 0.070976,
+                    "backward_cost": 0.11097,
+                    "deepth": 5,
+                    "collect_flag": "none"
+                  },
+                  "RetNetPred_MSF_Phase.backbone.layers.3.retention.out_proj": {
+                    "forward_cost": 0.07736799999999999,
+                    "backward_cost": 0.108251,
+                    "deepth": 5,
+                    "collect_flag": "none"
+                  },
+                  "RetNetPred_MSF_Phase.backbone.layers.3.retention.self_retention": {
+                    "forward_cost": 0.348595,
+                    "backward_cost": 0.339764,
+                    "deepth": 5,
+                    "collect_flag": "none"
+                  },
+                  "RetNetPred_MSF_Phase.backbone.layers.3.retention.group_norm": {
+                    "forward_cost": 0.134081,
+                    "backward_cost": 0.650052,
+                    "deepth": 5,
+                    "collect_flag": "none"
+                  },
+                  "RetNetPred_MSF_Phase.backbone.layers.3.retention.remaining_cost": {
+                    "forward_cost": 0.768871,
+                    "deepth": 5,
+                    "backward_cost": 0.795877
+                  }
+                }
+              },
+              "RetNetPred_MSF_Phase.backbone.layers.3.retention_layer_norm": {
+                "forward_cost": 0.12381099999999999,
+                "backward_cost": 0.239954,
+                "deepth": 4,
+                "collect_flag": "none"
+              },
+              "RetNetPred_MSF_Phase.backbone.layers.3.ffn": {
+                "forward_cost": 0.603664,
+                "backward_cost": 0.5023409999999999,
+                "deepth": 4,
+                "collect_flag": "none",
+                "children": {
+                  "RetNetPred_MSF_Phase.backbone.layers.3.ffn.activation_dropout_module": {
+                    "forward_cost": 0.037481,
+                    "backward_cost": 0.011424,
+                    "deepth": 5,
+                    "collect_flag": "none"
+                  },
+                  "RetNetPred_MSF_Phase.backbone.layers.3.ffn.dropout_module": {
+                    "forward_cost": 0.036900999999999996,
+                    "backward_cost": 0.011063,
+                    "deepth": 5,
+                    "collect_flag": "none"
+                  },
+                  "RetNetPred_MSF_Phase.backbone.layers.3.ffn.fc1": {
+                    "forward_cost": 0.076398,
+                    "backward_cost": 0.121322,
+                    "deepth": 5,
+                    "collect_flag": "none"
+                  },
+                  "RetNetPred_MSF_Phase.backbone.layers.3.ffn.fc2": {
+                    "forward_cost": 0.075221,
+                    "backward_cost": 0.142373,
+                    "deepth": 5,
+                    "collect_flag": "none"
+                  },
+                  "RetNetPred_MSF_Phase.backbone.layers.3.ffn.ffn_layernorm": {
+                    "forward_cost": 0.060620999999999994,
+                    "backward_cost": 0.084363,
+                    "deepth": 5,
+                    "collect_flag": "none"
+                  },
+                  "RetNetPred_MSF_Phase.backbone.layers.3.ffn.remaining_cost": {
+                    "forward_cost": 0.317042,
+                    "deepth": 5,
+                    "backward_cost": 0.1317959999999999
+                  }
+                }
+              },
+              "RetNetPred_MSF_Phase.backbone.layers.3.final_layer_norm": {
+                "forward_cost": 0.109918,
+                "backward_cost": 0.22544,
+                "deepth": 4,
+                "collect_flag": "none"
+              },
+              "RetNetPred_MSF_Phase.backbone.layers.3.remaining_cost": {
+                "forward_cost": 0.2929090000000003,
+                "deepth": 4,
+                "backward_cost": 0.1728510000000001
+              }
+            }
+          },
+          "RetNetPred_MSF_Phase.backbone.layers.remaining_cost": {
+            "forward_cost": 0.0,
+            "deepth": 3,
+            "backward_cost": 0.0
+          }
+        },
+        "forward_cost": 11.494571,
+        "backward_cost": 12.112336999999998
+      },
+      "RetNetPred_MSF_Phase.backbone.layer_norm": {
+        "forward_cost": 0.14543,
+        "backward_cost": 0.21887299999999998,
+        "deepth": 2,
+        "collect_flag": "none"
+      },
+      "RetNetPred_MSF_Phase.backbone.retnet_rel_pos": {
+        "deepth": 2,
+        "collect_flag": "none"
+      },
+      "RetNetPred_MSF_Phase.backbone.remaining_cost": {
+        "forward_cost": 0.2783560000000005,
+        "deepth": 2,
+        "backward_cost": 0
+      }
+    }
+  }
+}

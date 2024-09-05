@@ -1,0 +1,55 @@
+project: diting.tiny.trace.hdf5-slide_window
+method: bayes
+metric:
+  name: validation/e_shift
+  goal: minimize
+parameters:
+  lr:
+    min: 0.00001
+    max: 0.01
+  batch_size:
+    values: [ 8, 16, 24, 32, 64]
+  embedder_layers:
+    values: [2]
+  seed:
+    values: [20130901]
+  optim:
+    values: [adamw]
+  weight_decay:
+    values: [0.1]
+  model:
+    values: [Victor15M]
+command:
+  - accelerate-launch 
+  - --config_file 
+  - config/accelerate/bf16_cards8_ds1.yaml 
+  - train_single_station_via_llm_way.py 
+  - --task 
+  - train 
+  - --epochs 
+  - 50 
+  - --downstream_task 
+  - mse_xy
+  - --max_length 
+  - 6000 
+  - --num_workers 
+  - 8 
+  - --data_parallel_dispatch 
+  - --resource_source 
+  - diting.tiny.trace.hdf5 
+  - --Resource 
+  - DiTing 
+  - --return_trend
+  - --warmup_epochs
+  - 3
+  - --use_wandb
+  - --bandfilter_rate
+  - 0.5 
+  - --save_every_epoch
+  - 10
+  - --clean_checkpoints_at_end
+  - --train_sampling_strategy.strategy_name
+  - early_warning_before_p
+  - --train_sampling_strategy.early_warning
+  - 200
+  - ${args}

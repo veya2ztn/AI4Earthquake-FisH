@@ -1,0 +1,13 @@
+bash speed_test.multinode.sh GoldfishS40M 16 2
+bash speed_test.multinode.sh GoldfishS40M 16 2
+bash speed_test.multinode.sh GoldfishS40M 16 2
+bash speed_test.multinode.sh GoldfishS40M 32 2
+bash speed_test.multinode.sh GoldfishS40M 64 2
+bash speed_test.multinode.sh GoldfishS10M 16 2
+bash speed_test.multinode.sh GoldfishS10M 32 2
+bash speed_test.multinode.sh GoldfishS10M 64 2
+bash speed_test.multinode.sh GoldfishS40M 4 2
+bash speed_test.multinode.sh GoldfishS40M 8 2
+bash speed_test.multinode.sh GoldfishS10M 4 2
+bash speed_test.multinode.sh GoldfishS10M 8 2
+bash speed_test.multinode.sh GoldfishS10M 8 2

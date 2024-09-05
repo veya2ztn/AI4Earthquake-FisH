@@ -1,0 +1,44 @@
+program: trainer.py
+project: magloc.stead.accelerate.aligned
+method: bayes
+metric:
+  name: mmt_best_loss
+  goal: minimize
+parameters:
+  lr:
+    min: 0.00001
+    max: 0.0005
+  batch-size:
+    values: [64, 128, 256]
+  opt:
+    values: ['adamw','lamb']
+  sched:
+    values: ['cosine']
+  nhead:
+    values: [10]
+  single_station_epochs:
+    values: [0]
+  seed:
+    values: [19940928, 19950929, 20130901, 20230901]
+command:
+  - python
+  - ${program}
+  - --model_config
+  - config/model_configs/offset_big.json
+  - --data_configs
+  - config/dataset_configs/magloc.stead.accelerate.aligned.json
+  - --valid_batch_size
+  - 256
+  - --epochs
+  - 100
+  - --evaluate_every_epoch
+  - 1
+  - --recorder_list
+  - wandb,tensorboard
+  - --num_workers
+  - 8
+  - --target_type 
+  - all_in_all_delta
+  - --loss_mag_weight
+  - 0
+  - ${args}

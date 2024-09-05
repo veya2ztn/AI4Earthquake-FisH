@@ -1,0 +1,45 @@
+program: train_single_station_via_llm_way.py
+project: stead.trace.BDLEELSSO_sample3000
+method: bayes
+metric:
+  name: validation/loss
+  goal: minimize
+parameters:
+  lr:
+    min: 0.001
+    max: 0.01
+  seed:
+    values: [19940928, 19950929, 20130901, 20230901]
+  batch_size:
+    values: [ 64, 128, 256, 512, 1024]
+    
+command:
+  - python
+  - ${program}
+  - --use_wandb
+  - --distance_unit 
+  - 1
+  - --model_type
+  - SimpleMSFA
+  - --epochs
+  - 300
+  - --warning_window
+  - -2
+  - --downstream_task
+  - findP
+  - --max_length
+  - 3000
+  - --sched_cycle_nums
+  - 1
+  - --dataset_name 
+  - stead.trace.BDLEELSSO_sample3000 
+  - --wave_channel 
+  - 4 
+  - --status_type 
+  - whereisP 
+  - --warmup_epochs 
+  - 10 
+  - --num_workers 
+  - 8
+  - ${args}
+  

@@ -1,0 +1,42 @@
+program: train_single_station_via_llm_way.py
+project: Quake6000
+method: bayes
+metric:
+  name: validation/loss
+  goal: minimize
+parameters:
+  lr:
+    min: 0.001
+    max: 0.01
+  seed:
+    values: [19940928, 19950929, 20130901, 20230901]
+  batch_size:
+    values: [ 16, 32, 64, 128]
+  num_hidden_layers:
+    values: [2, 4, 8]
+  hidden_size:
+    values: [64, 128, 256, 512]
+  num_heads:
+    values: [4, 8, 16]
+    
+command:
+  - accelerate-launch
+  - --main_process_port
+  - 12345
+  - --config_file
+  - config/accelerate/fp16_cards8.yaml
+  - ${program}
+  - --use_wandb
+  - --distance_unit 
+  - 1
+  - --model_type
+  - ViT_Patch
+  - --epochs
+  - 30
+  - --warning_window
+  - 0
+  - --downstream_task
+  - abs_xy
+  - --max_length
+  - 6000
+  - ${args}

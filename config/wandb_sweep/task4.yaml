@@ -1,0 +1,48 @@
+project: diting.tiny.trace.hdf5-recurrent
+method: bayes
+metric:
+  name: validation/e_shift
+  goal: minimize
+parameters:
+  batch_size:
+    values: [ 16]
+  embedder_layers:
+    values: [2]
+  seed:
+    values: [20130901]
+  optim:
+    values: [lion]
+  weight_decay:
+    values: [0.1]
+command:
+  - accelerate-launch 
+  - --config_file 
+  - config/accelerate/bf16_cards8_ds1.yaml 
+  - train_single_station_via_llm_way.py 
+  - --task 
+  - train 
+  - --model 
+  - PearlfishW10M 
+  - --epochs 
+  - 100 
+  - --downstream_task 
+  - mse_xy
+  - --max_length 
+  - 6000 
+  - --num_workers 
+  - 8 
+  - --data_parallel_dispatch 
+  - --resource_source 
+  - diting.tiny.trace.hdf5 
+  - --Resource 
+  - DiTing 
+  - --return_trend
+  - --warmup_epochs
+  - 3
+  - --use_wandb
+  - --bandfilter_rate
+  - 0.5 
+  - --save_every_epoch
+  - 10
+  - --clean_checkpoints_at_end
+  - ${args}
