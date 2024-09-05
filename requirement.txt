@@ -1,0 +1,15 @@
+obspy
+geopy
+tensorboardX
+ninja
+transformers==4.38.2
+accelarate
+einops
+datasets
+hdf5
+tabulate
+simple-parsing
+wandb
+scikit-learn
+
+
